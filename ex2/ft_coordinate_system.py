@@ -1,5 +1,4 @@
 import math
-# import math, math.sqrt(), input(), round(), print()
 
 
 def input_function() -> tuple:
