@@ -10,18 +10,19 @@ class NotAnItem(Exception):
     def __init__(self, message: str = "Not an item. Discarding") -> None:
         super().__init__(message)
 
-
-ITEMS: tuple = (
-    "sword",
-    "staff",
-    "spear",
-    "book",
-    "sling",
-    "bow",
-    "helmet",
-    "wand",
-    "super-mega-ultra-duper-doom-creator"
-)
+# There is no need to do a list of avaliable items.
+# Avaliable items are those you input with the correct format
+# ITEMS: tuple = (
+#     "sword",
+#     "staff",
+#     "spear",
+#     "book",
+#     "sling",
+#     "bow",
+#     "helmet",
+#     "wand",
+#     "super-mega-ultra-duper-doom-creator"
+# )
 
 
 def inventory_logic(inventory: dict) -> None:
@@ -49,8 +50,8 @@ def parsing_arguments(argument: str, inventory: dict) -> dict:
     if ":" not in argument:
         raise ValueError("Missing ':' value")
     name, qty_s = argument.split(":", 1)
-    if name not in ITEMS:
-        raise NotAnItem(f"'{name}' is not a valid item")
+    # if name not in ITEMS:
+    #     raise NotAnItem(f"'{name}' is not a valid item")
     if not qty_s.isdigit():
         raise ValueError(f"Quantity error. {qty_s} is not numerical")
     qty: int = int(qty_s)
